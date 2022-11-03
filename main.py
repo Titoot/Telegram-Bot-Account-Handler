@@ -29,7 +29,7 @@ def createAcc(update: Update, context: CallbackContext):
   userchecker = insertCommand(check)
 
   if not userchecker:
-    accMatch = re.match(r'/createAcc\s(.+?)\s(.*)', update.message.text)
+    accMatch = re.match(r'/createAcc\s([a-zA-Z0-9_.-]*)\s([a-zA-Z0-9_.-]*)', update.message.text)
     if not accMatch:
       update.message.reply_text('/createAcc username password')
     else:
